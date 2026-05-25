@@ -1,19 +1,31 @@
 # Airline Reservation System
 
-## Introduction
-This console application can help users make a reservation using their first name and last name
-and save the reservation data upon exiting the application to enhance user satisfaction .
+Final project for my Computer Engineering Technology program at Seneca College, Winter 2024.
 
-## Features
-- Feature 1: Saving firstNanme and lastName
-- Feature 2: showing a map of available seats 
-- Feature 3: showing a map of occupied seats 
+The goal was to build something that actually persists between runs — most class projects just reset every time you close them, which felt pointless. This one saves reservation data to a file so it carries over between sessions.
 
+## What it does
 
-## Languages Used
-- C
+- Register passengers by first and last name
+- See a seat map showing what's available
+- See a seat map showing what's taken
+- Reservations save to a file on exit and reload next run
 
-## Setup
-After running the app choose your desired option from the menu and process based on the chosen functionality
+## How to run it
 
+Open `Final_Project/Final_Project.sln` in Visual Studio and build from there. Configured for x64 Debug by default.
 
+On Linux you can compile directly:
+
+```bash
+gcc "Final_Project/Econo-Flight Airline Reservation Program W 2024.c" -o airline
+./airline
+```
+
+Then follow the menu options.
+
+## Notes
+
+First time I had to deal with file I/O in C. Getting the seat data to write and read back in the right format took longer than I expected — had to be careful about how I was parsing the text file on reload so it didn't corrupt the seat state.
+
+Built in C, Visual Studio 2022.
